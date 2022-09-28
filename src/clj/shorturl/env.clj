@@ -2,7 +2,7 @@
   (:require [clojure.java.io :as jio]))
 
 (def envvars
-  (if (.exist (clojure.java.io/file "env.edn"))
+  (if (.exists (clojure.java.io/file "env.edn"))
     (clojure.edn/read-string (slurp "env.edn"))
     {}))
 
