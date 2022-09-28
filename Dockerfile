@@ -15,7 +15,7 @@ ENV PATH $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
 COPY . /usr/src/app
 WORKDIR /usr/src/app
 
-RUN  npx tailwind -i global.css -o resources/public/assets/css/output.css --minify
+RUN  npx tailwindcss -i global.css -o resources/public/assets/css/output.css --minify
 
 RUN npm i
 
