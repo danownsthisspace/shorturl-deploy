@@ -2,7 +2,7 @@ name: remote ssh command
 on:
   push:
     branches:
-      -main
+      - main
 
 jobs:
   build:
@@ -17,6 +17,6 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         port: 22
         script: |
-              cd shorturl-deploy
+              cd shortulr-deploy
               git pull
               docker-compose up -d --build app
