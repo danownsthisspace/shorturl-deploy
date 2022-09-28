@@ -12,10 +12,10 @@ jobs:
     - name: executing remote ssh commands using password
       uses: appleboy/ssh-action@master
       with:
-        host: http://212.71.255.252/
+        host: 212.71.255.252
         username: root
         password: ${{ secrets.PASSWORD }}
-        port: 22
+        port: 22  
         script: |
               cd shortulr-deploy
               git pull
