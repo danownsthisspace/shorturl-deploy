@@ -1,0 +1,22 @@
+name: remote ssh command
+on:
+  push:
+    branches:
+      -main
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@master
+      with:
+        host: http://212.71.255.252/
+        username: root
+        password: ${{ secrets.PASSWORD }}
+        port: 22
+        script: |
+              cd shorturl-deploy
+              git pull
+              docker-compose up -d --build app
