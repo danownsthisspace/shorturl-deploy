@@ -17,7 +17,7 @@
                              data (js->clj response :keywordize-keys true)]
                        (set-state assoc :slug (:slug data))))
         redirect-link (str (.-origin js/location) "/" (:slug state) "/")]
-    (d/div {:class-name "bg-pink-100 grid place-items-center h-screen"}
+    (d/div {:class-name "bg-pink-500 grid place-items-center h-screen"}
            (if (:slug state)
              (d/div (d/a {:href redirect-link} redirect-link))
              (d/div
